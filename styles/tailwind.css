@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+    outline: none !important;
+  }
+
+  body {
+    @apply font-mono;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-blue-300 rounded-full;
+  }
+  ::-webkit-scrollbar {
+    @apply w-1 md:w-2 h-1 md:h-2;
+  }
+  ::-webkit-file-upload-button {
+    @apply bg-blue-500 text-white px-5 py-2 border-none rounded cursor-pointer;
+  }
+}
+
+@layer components {
+  .btn-file {
+    position: relative;
+    overflow: hidden;
+    @apply bg-blue-500 text-white w-40 h-20 md:w-60 md:h-20 md:text-2xl font-medium rounded flex justify-center items-center;
+  }
+
+  .btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-height: 100%;
+    min-width: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+  }
+}
